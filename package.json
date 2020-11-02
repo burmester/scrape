@@ -1,0 +1,23 @@
+{
+  "name": "scrape-saljkollen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^5.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burmester/scrape.git"
+  },
+  "author": "Johan Burmester",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burmester/scrape/issues"
+  },
+  "homepage": "https://github.com/burmester/scrape#readme"
+}

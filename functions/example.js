@@ -1,7 +1,15 @@
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
 
 exports.handler = async function(event, context) {
-    const browser = await puppeteer.launch()
+    const saljkollen = JSON.parse(event.body).url;
+    
+    const browser = await chromium.puppeteer.launch({
+        executablePath: await chromium.executablePath,
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        headless: chromium.headless
+    });
+
     const page = await browser.newPage()
     try{
         const str = "https://www.hemnet.se/saljkollen/17078586/7a0ea7ad148accd3c5cbfbe91af48c4548da1e9e6cdf74a9cbd463226e87579c?asdfasdfas"

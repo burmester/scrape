@@ -1,7 +1,6 @@
-const { exception } = require('console');
 const puppeteer = require('puppeteer');
 
-(async (event, context) => {
+exports.handler = async function(event, context) {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     try{
@@ -15,6 +14,7 @@ const puppeteer = require('puppeteer');
         await page.waitForTimeout(500)
         //const visits = await page.$eval('.sellers-dashboard__primary-number', el => el.innerText)
         const raketen = await page.$eval('.sellers-dashboard__secondary-number', el => el.innerText)
+        await browser.close()
         return {
             statusCode: 200,
             body: "Raketen: " + raketen
@@ -22,16 +22,18 @@ const puppeteer = require('puppeteer');
     } catch(err) {
         try{
             const visits = await page.$eval('.seller-listing__times-viewed-counter', el => el.innerText)
+            await browser.close()
             return {
                 statusCode: 200,
                 body: "Visits: " + visits
               }
         }catch (err2){
             console.log("error",err, err2)
+            await browser.close()
             return {
                 statusCode: 500
               }
         }
+        
     }
-  await browser.close()
-})()
+}

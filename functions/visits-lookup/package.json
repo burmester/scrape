@@ -2,7 +2,7 @@
   "name": "scrape-saljkollen",
   "version": "1.0.0",
   "description": "",
-  "main": "example.js",
+  "main": "visits-lookup.js",
   "dependencies": {
     "chrome-aws-lambda": "^5.3.1",
     "puppeteer-core": "^5.4.1"
@@ -13,14 +13,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/burmester/scrape.git"
-  },
   "author": "Johan Burmester",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/burmester/scrape/issues"
-  },
-  "homepage": "https://github.com/burmester/scrape#readme"
 }

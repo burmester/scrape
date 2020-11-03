@@ -2,6 +2,6 @@
 ID = "120245a5-bd28-42b2-ba01-654ea452f831"
 
 [build]
-  Command = "yarn build"
-  Functions = "functions"
-  Publish = "build"
+  command = "npm run build"
+  functions = "lambda"
+  publish = "build"

@@ -1,8 +1,8 @@
 const chromium = require('chrome-aws-lambda');
 
 exports.handler = async (event, context) => {
-    let saljkollen = JSON.parse(event.body).url;
-    saljkollen = "https://www.hemnet.se/saljkollen/17078586/7a0ea7ad148accd3c5cbfbe91af48c4548da1e9e6cdf74a9cbd463226e87579c?asdfasdfas"
+    // let saljkollen = JSON.parse(event.body).url;
+    const saljkollen = "https://www.hemnet.se/saljkollen/17078586/7a0ea7ad148accd3c5cbfbe91af48c4548da1e9e6cdf74a9cbd463226e87579c?asdfasdfas"
     const url = saljkollen.split("?")[0]+'?role=admin';
     
     const browser = await chromium.puppeteer.launch({
@@ -11,7 +11,9 @@ exports.handler = async (event, context) => {
         defaultViewport: chromium.defaultViewport,
         headless: chromium.headless
     });
+
     const page = await browser.newPage()
+    
     try{
         await page.goto(url)
         await page.setViewport({

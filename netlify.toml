@@ -1,4 +1,7 @@
+[Settings]
+ID = "120245a5-bd28-42b2-ba01-654ea452f831"
 
 [build]
-  publish = "public/"
-  functions = "functions/"
+  Command = "yarn build"
+  Functions = "functions"
+  Publish = "build"

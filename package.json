@@ -1,18 +1,25 @@
 {
-  "name": "scrape-saljkollen",
+  "name": "justscrapeit",
   "version": "1.0.0",
-  "description": "",
-  "main": "visits-lookup.js",
+  "private": false,
+  "author": "Johan Burmester",
+  "license": "ISC",
   "dependencies": {
     "chrome-aws-lambda": "^5.3.1",
+    "netlify-lambda": "^2.0.1",
     "puppeteer-core": "^5.4.1"
   },
+  "scripts": {
+    "start": "netlify-lambda install src/lambda",
+    "build": "netlify-lambda build src/lambda"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "puppeteer": "^5.4.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Johan Burmester",
-  "license": "ISC"
+  }
 }

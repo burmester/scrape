@@ -4,4 +4,3 @@ ID = "120245a5-bd28-42b2-ba01-654ea452f831"
 [build]
   command = "npm run build"
   functions = "functions"
-  publish = "build"
